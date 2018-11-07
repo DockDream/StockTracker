@@ -703,6 +703,8 @@ public class Calculator extends JFrame {
 				} // end try catch
 		    	String dayHighString = Double.toString(currentStock.getDayHigh());
 		    	dayHighText.setText(dayHighString);
+		    	String sevenDayHighString = Double.toString(currentStock.getSevenDayHigh());
+		    	sevenDayHighText.setText(sevenDayHighString);
 		    } // end action performed
 		}); // end symbolText.addActionListener
 		

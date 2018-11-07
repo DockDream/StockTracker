@@ -35,6 +35,7 @@ public class URLConnectionReader {
     } // end getData method
 	
 	public static void getOneDay(String s, Stock currentStock) throws Exception{
+		
 		String address = new String("https://api.iextrading.com/1.0/stock/aapl/chart/1d?chartLast=1&filter=high");
         URL targetURL = new URL(address);
         URLConnection yc = targetURL.openConnection();
@@ -44,12 +45,10 @@ public class URLConnectionReader {
         
         StringBuilder sb = new StringBuilder();
         String inputLine = "";
-    
+        
         while ((inputLine = in.readLine()) != null) { 
         	sb.append(inputLine);
         	
-        	// println for testing, remove from final code
-            System.out.println("first time:" + sb);
         } // end while
         
         in.close();
@@ -63,7 +62,7 @@ public class URLConnectionReader {
         currentStock.setDayHigh(dayHigh);
         
      // println for testing, remove from final code
-    	System.out.println("This is the high: " + dayHigh);
+    	System.out.println("This is the high from one day: " + dayHigh);
     	
 	} // end getOneDay method
 	
@@ -101,12 +100,12 @@ public class URLConnectionReader {
         String jsonIn = sb.toString();
         JSONArray dayChartArray = new JSONArray(jsonIn);
         JSONObject dayObj = dayChartArray.getJSONObject(0);
-        double dayHigh = dayObj.getDouble("high");
+        double sevenDayHigh = dayObj.getDouble("high");
         
-        currentStock.setDayHigh(dayHigh);
+        currentStock.setSevenDayHigh(sevenDayHigh);
         
      // println for testing, remove from final code
-    	System.out.println("This is the high: " + dayHigh);
+    	System.out.println("This is the high from seven day: " + sevenDayHigh);
 		
 	} // end getSevenDay method
 	
