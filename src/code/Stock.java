@@ -8,21 +8,21 @@ public class Stock {
 	static int numberOfStocks = 0;
 	
 	// individual stock attributes
-	String symbol;
-	String sector; // might be able to use an int here instead
-	double score;
-	double dayHigh;
-	double dayLow;
-	double sevenDayHigh;
-	double sevenDayLow;
-	double thirtyDayHigh;
-	double thirtyDayLow;
-	double volume;
-	double peRatio;
-	double eps;
-	double growthRate;
-	double debtAsset;
-	double assetLiability;
+	private String symbol;
+	private String sector; // might be able to use an int here instead
+	private double score;
+	private double dayHigh;
+	private double dayLow;
+	private double sevenDayHigh;
+	private double sevenDayLow;
+	private double thirtyDayHigh;
+	private double thirtyDayLow;
+	private double volume;
+	private double peRatio;
+	private double eps;
+	private double growthRate;
+	private double debtAsset;
+	private double assetLiability;
 	
 	public Stock(String symbol) {
 		this.symbol = symbol;
